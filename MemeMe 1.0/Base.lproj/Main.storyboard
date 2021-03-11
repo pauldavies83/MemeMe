@@ -19,11 +19,19 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nK-JH-38c">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
-                                    <barButtonItem title="Pick" id="5TZ-eL-Gff">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="31I-IL-kqE"/>
+                                    <barButtonItem style="plain" systemItem="camera" id="tGe-gL-ZWk">
+                                        <connections>
+                                            <action selector="openCamera:" destination="BYZ-38-t0r" id="bBh-wp-3L9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="j3O-RT-n7E"/>
+                                    <barButtonItem title="Album" id="5TZ-eL-Gff">
                                         <connections>
                                             <action selector="pickImage:" destination="BYZ-38-t0r" id="zi2-BJ-6WN"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="gTk-qa-Jio"/>
                                 </items>
                             </toolbar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jbf-xp-gNy">
@@ -33,16 +41,17 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="7nK-JH-38c" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0Uv-AC-JxT"/>
-                            <constraint firstItem="7nK-JH-38c" firstAttribute="top" secondItem="Jbf-xp-gNy" secondAttribute="bottom" id="3Xj-4t-NxD"/>
-                            <constraint firstItem="7nK-JH-38c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="A3A-Ce-iZo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jbf-xp-gNy" secondAttribute="trailing" id="Ctx-r5-Vxx"/>
-                            <constraint firstItem="Jbf-xp-gNy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eNF-No-4Em"/>
-                            <constraint firstItem="Jbf-xp-gNy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tUX-pa-bhw"/>
-                            <constraint firstItem="7nK-JH-38c" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="vX2-dD-bPF"/>
+                            <constraint firstAttribute="trailing" secondItem="Jbf-xp-gNy" secondAttribute="trailing" id="ZIn-7y-YyT"/>
+                            <constraint firstItem="Jbf-xp-gNy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Zj6-zx-b1V"/>
+                            <constraint firstItem="7nK-JH-38c" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="cW8-Ix-dyA"/>
+                            <constraint firstItem="Jbf-xp-gNy" firstAttribute="trailing" secondItem="7nK-JH-38c" secondAttribute="trailing" id="dez-ur-h4N"/>
+                            <constraint firstItem="7nK-JH-38c" firstAttribute="top" secondItem="Jbf-xp-gNy" secondAttribute="bottom" id="nX5-Ux-LBA"/>
+                            <constraint firstItem="Jbf-xp-gNy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nfh-DK-2XR"/>
+                            <constraint firstItem="Jbf-xp-gNy" firstAttribute="leading" secondItem="7nK-JH-38c" secondAttribute="leading" id="skp-0b-5dt"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="openCameraButton" destination="tGe-gL-ZWk" id="HIX-dH-vdv"/>
                         <outlet property="pickedImage" destination="Jbf-xp-gNy" id="XlM-NP-Mhs"/>
                     </connections>
                 </viewController>
