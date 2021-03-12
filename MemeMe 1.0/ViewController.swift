@@ -11,7 +11,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
                       UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var pickedImage: UIImageView!
+    
     @IBOutlet weak var openCameraButton: UIBarButtonItem!
+    
     @IBOutlet var topText: UITextField!
     @IBOutlet var bottomText: UITextField!
 
@@ -51,6 +53,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         launchImagePicker(.camera)
     }
     
+    @IBAction func cancel(_ sender: Any) {
+        pickedImage.image = nil
+        topText.text = defaultTopText
+        bottomText.text = defaultBottomText
+    }
+    
     func launchImagePicker(_ sourceType: UIImagePickerController.SourceType) {
         let picker: UIImagePickerController = UIImagePickerController()
         picker.delegate = self
@@ -64,7 +72,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         if let image = info[.originalImage] as? UIImage {
             pickedImage.image = image
         }
-        
         dismiss(animated: true, completion: nil)
     }
 
