@@ -69,11 +69,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     
     // MARK: UITextFieldDelegate implementation
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if (textField.text == defaultTopText || textField.text == defaultBottomText) {
+            textField.text = ""
+        }
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
