@@ -16,8 +16,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="406" translatesAutoresizingMaskIntoConstraints="NO" id="Jbf-xp-gNy">
+                                <rect key="frame" x="0.0" y="44" width="414" height="768"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="TOP" textAlignment="center" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="jXF-Bx-KTM">
+                                <rect key="frame" x="140" y="44" width="135" height="49.5"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="BOTTOM" textAlignment="center" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="R6J-pF-zaM">
+                                <rect key="frame" x="8" y="754.5" width="398" height="49.5"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nK-JH-38c">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="WcZ-8N-Csr"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="31I-IL-kqE"/>
                                     <barButtonItem style="plain" systemItem="camera" id="tGe-gL-ZWk">
@@ -34,30 +52,37 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="gTk-qa-Jio"/>
                                 </items>
                             </toolbar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jbf-xp-gNy">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Jbf-xp-gNy" secondAttribute="trailing" id="ZIn-7y-YyT"/>
-                            <constraint firstItem="Jbf-xp-gNy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Zj6-zx-b1V"/>
+                            <constraint firstItem="jXF-Bx-KTM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="3Ml-da-KSO"/>
+                            <constraint firstItem="jXF-Bx-KTM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4LG-UH-TMI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7nK-JH-38c" secondAttribute="trailing" id="8Bb-bT-TxN"/>
+                            <constraint firstItem="7nK-JH-38c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GBe-9U-wsd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jbf-xp-gNy" secondAttribute="trailing" id="IvG-Mc-ghQ"/>
+                            <constraint firstItem="R6J-pF-zaM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Lr9-uA-FYC"/>
                             <constraint firstItem="7nK-JH-38c" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="cW8-Ix-dyA"/>
-                            <constraint firstItem="Jbf-xp-gNy" firstAttribute="trailing" secondItem="7nK-JH-38c" secondAttribute="trailing" id="dez-ur-h4N"/>
-                            <constraint firstItem="7nK-JH-38c" firstAttribute="top" secondItem="Jbf-xp-gNy" secondAttribute="bottom" id="nX5-Ux-LBA"/>
-                            <constraint firstItem="Jbf-xp-gNy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nfh-DK-2XR"/>
-                            <constraint firstItem="Jbf-xp-gNy" firstAttribute="leading" secondItem="7nK-JH-38c" secondAttribute="leading" id="skp-0b-5dt"/>
+                            <constraint firstItem="Jbf-xp-gNy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="clC-EK-IlV"/>
+                            <constraint firstItem="Jbf-xp-gNy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="f1V-uT-0Qb"/>
+                            <constraint firstItem="Jbf-xp-gNy" firstAttribute="bottom" secondItem="7nK-JH-38c" secondAttribute="top" id="fDz-5b-eB1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jXF-Bx-KTM" secondAttribute="trailing" constant="8" id="hqH-mK-82M"/>
+                            <constraint firstItem="jXF-Bx-KTM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="sm5-qN-0Zz"/>
+                            <constraint firstItem="R6J-pF-zaM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tED-5k-iTS"/>
+                            <constraint firstItem="7nK-JH-38c" firstAttribute="top" secondItem="R6J-pF-zaM" secondAttribute="bottom" constant="8" id="xDw-Zl-ljw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R6J-pF-zaM" secondAttribute="trailing" constant="8" id="xHe-8d-2J0"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomText" destination="R6J-pF-zaM" id="NDe-qt-Aoj"/>
                         <outlet property="openCameraButton" destination="tGe-gL-ZWk" id="HIX-dH-vdv"/>
                         <outlet property="pickedImage" destination="Jbf-xp-gNy" id="XlM-NP-Mhs"/>
+                        <outlet property="topText" destination="jXF-Bx-KTM" id="vnX-iO-ZX3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="115"/>
+            <point key="canvasLocation" x="131.8840579710145" y="114.50892857142857"/>
         </scene>
     </scenes>
     <resources>
