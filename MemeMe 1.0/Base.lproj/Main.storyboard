@@ -22,7 +22,11 @@
                                     <constraint firstAttribute="height" constant="48" id="j8R-6c-AcQ"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Item" image="square.and.arrow.up" catalog="system" id="9qh-eW-bal"/>
+                                    <barButtonItem title="Item" image="square.and.arrow.up" catalog="system" id="9qh-eW-bal" userLabel="Share">
+                                        <connections>
+                                            <action selector="share:" destination="BYZ-38-t0r" id="Atr-ab-C0z"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="fPa-5s-m7o"/>
                                     <barButtonItem systemItem="cancel" id="7x4-aO-y0Q">
                                         <connections>
@@ -93,9 +97,12 @@
                     </view>
                     <connections>
                         <outlet property="bottomText" destination="R6J-pF-zaM" id="NDe-qt-Aoj"/>
+                        <outlet property="bottomToolbar" destination="7nK-JH-38c" id="654-Ik-cFv"/>
                         <outlet property="openCameraButton" destination="tGe-gL-ZWk" id="HIX-dH-vdv"/>
                         <outlet property="pickedImage" destination="Jbf-xp-gNy" id="XlM-NP-Mhs"/>
+                        <outlet property="shareButton" destination="9qh-eW-bal" id="FKn-9c-Yec"/>
                         <outlet property="topText" destination="jXF-Bx-KTM" id="vnX-iO-ZX3"/>
+                        <outlet property="topToolbar" destination="iuF-6d-Gho" id="MRJ-bN-oIh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
