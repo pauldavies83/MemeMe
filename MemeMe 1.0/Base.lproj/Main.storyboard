@@ -44,7 +44,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="BOTTOM" textAlignment="center" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="R6J-pF-zaM">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="BOTTOM" textAlignment="center" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="R6J-pF-zaM">
                                 <rect key="frame" x="8" y="756.5" width="398" height="49.5"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
