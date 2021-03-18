@@ -49,6 +49,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -67,7 +69,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 
     @objc func keyboardWillShow(_ notification:Notification) {
         if (bottomText.isEditing) {
-            view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y = getKeyboardHeight(notification) * (-1)
         }
     }
     
