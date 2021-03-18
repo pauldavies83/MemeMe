@@ -128,7 +128,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     func save(_ meme: Meme) {
-        UIImageWriteToSavedPhotosAlbum(meme.memedImage, nil, nil, nil)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     func launchImagePicker(_ sourceType: UIImagePickerController.SourceType) {
