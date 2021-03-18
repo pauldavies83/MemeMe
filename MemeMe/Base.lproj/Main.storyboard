@@ -30,17 +30,17 @@
         <!--Sent Memes-->
         <scene sceneID="uXZ-qt-ahw">
             <objects>
-                <tableViewController id="cFZ-9Y-YnY" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fjx-ed-oun">
+                <tableViewController id="cFZ-9Y-YnY" customClass="SentMemesTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fjx-ed-oun">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="0Wf-CX-c6G">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="memeCell" id="0Wf-CX-c6G">
+                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Wf-CX-c6G" id="JyC-lf-RI1">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -224,6 +224,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R6J-pF-zaM" secondAttribute="trailing" constant="8" id="xHe-8d-2J0"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="jVf-6V-Acx"/>
                     <connections>
                         <outlet property="bottomText" destination="R6J-pF-zaM" id="NDe-qt-Aoj"/>
                         <outlet property="bottomToolbar" destination="7nK-JH-38c" id="654-Ik-cFv"/>
@@ -240,7 +241,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dUv-A0-4Ub"/>
+        <segue reference="YnG-Af-xyV"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="circle.grid.3x3.fill" catalog="system" width="128" height="112"/>
