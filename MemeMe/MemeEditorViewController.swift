@@ -98,6 +98,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         topText.text = defaultTopText
         bottomText.text = defaultBottomText
         shareButton.isEnabled = false
+        
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func share(_ sender: Any) {
