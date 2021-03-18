@@ -33,16 +33,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        topText.defaultTextAttributes = memeTextAttributes
-        topText.textAlignment = .center
-        topText.text = defaultTopText
-        topText.delegate = self
-        
-        bottomText.defaultTextAttributes = memeTextAttributes
-        bottomText.textAlignment = .center
-        bottomText.text = defaultBottomText
-        bottomText.delegate = self
-        
+        configure(topText, with: defaultTopText)
+        configure(bottomText, with: defaultBottomText)
+
         shareButton.isEnabled = false
     }
     
@@ -60,6 +53,18 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    func configure(_ textField: UITextField, with defaultText: String) {
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .center
+        textField.text = defaultText
+        textField.delegate = self
+    }
+    
+    func setToolbars(hidden flag: Bool) {
+        topToolbar.isHidden = flag
+        bottomToolbar.isHidden = flag
+    }
+
     @objc func keyboardWillShow(_ notification:Notification) {
         if (bottomText.isEditing) {
             view.frame.origin.y -= getKeyboardHeight(notification)
@@ -108,16 +113,14 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     func generateMemedImage() -> UIImage {
-        topToolbar.isHidden = true
-        bottomToolbar.isHidden = true
-        
+        setToolbars(hidden: true)
+
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        topToolbar.isHidden = false
-        bottomToolbar.isHidden = false
+        setToolbars(hidden: false)
 
         return memedImage
     }
