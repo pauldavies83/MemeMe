@@ -111,6 +111,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
                 self.save(meme)
             }
             sharer.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
         }
         
         present(sharer, animated: true, completion: nil)
