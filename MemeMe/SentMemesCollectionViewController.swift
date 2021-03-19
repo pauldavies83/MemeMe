@@ -39,6 +39,12 @@ class SentMemesCollectionViewController : UICollectionViewController {
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let memeViewer = storyboard?.instantiateViewController(identifier: "MemeViewerViewController") as! MemeViewerViewController
+        memeViewer.memeImage = memes[(indexPath as NSIndexPath).row].memedImage
+        navigationController?.show(memeViewer, sender: self)
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         memes.count
     }

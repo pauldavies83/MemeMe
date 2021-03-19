@@ -154,6 +154,35 @@
             </objects>
             <point key="canvasLocation" x="-88" y="619"/>
         </scene>
+        <!--Meme Viewer View Controller-->
+        <scene sceneID="E3c-hy-rDk">
+            <objects>
+                <viewController storyboardIdentifier="MemeViewerViewController" id="4QD-iV-Vwp" customClass="MemeViewerViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b0K-Q7-xqe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="406" translatesAutoresizingMaskIntoConstraints="NO" id="DKG-vK-34a">
+                                <rect key="frame" x="0.0" y="92" width="414" height="712"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4BJ-sY-xOB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4BJ-sY-xOB" firstAttribute="bottom" secondItem="DKG-vK-34a" secondAttribute="bottom" id="HsC-Wx-9LN"/>
+                            <constraint firstItem="DKG-vK-34a" firstAttribute="trailing" secondItem="4BJ-sY-xOB" secondAttribute="trailing" id="KhS-IJ-8EM"/>
+                            <constraint firstItem="DKG-vK-34a" firstAttribute="top" secondItem="4BJ-sY-xOB" secondAttribute="top" id="b85-L2-Jlx"/>
+                            <constraint firstItem="DKG-vK-34a" firstAttribute="leading" secondItem="4BJ-sY-xOB" secondAttribute="leading" id="vrm-hV-tPX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="DKG-vK-34a" id="41U-Ld-dAj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="acd-HJ-k7x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1174" y="619"/>
+        </scene>
         <!--Meme Editor View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -254,7 +283,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="859" y="147"/>
+            <point key="canvasLocation" x="1174" y="-90"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

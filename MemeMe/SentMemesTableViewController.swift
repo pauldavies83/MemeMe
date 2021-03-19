@@ -28,6 +28,12 @@ class SentMemesTableViewController : UITableViewController, UIAdaptivePresentati
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let memeViewer = storyboard?.instantiateViewController(identifier: "MemeViewerViewController") as! MemeViewerViewController
+        memeViewer.memeImage = memes[(indexPath as NSIndexPath).row].memedImage
+        navigationController?.show(memeViewer, sender: self)
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         memes.count
     }
