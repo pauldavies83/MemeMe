@@ -98,6 +98,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         topText.text = defaultTopText
         bottomText.text = defaultBottomText
         shareButton.isEnabled = false
+        
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func share(_ sender: Any) {
@@ -109,6 +111,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
                 self.save(meme)
             }
             sharer.dismiss(animated: true, completion: nil)
+            self.dismissAndUpdatePreviousViewData()
         }
         
         present(sharer, animated: true, completion: nil)
@@ -128,7 +131,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     func save(_ meme: Meme) {
-        UIImageWriteToSavedPhotosAlbum(meme.memedImage, nil, nil, nil)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     func launchImagePicker(_ sourceType: UIImagePickerController.SourceType) {
@@ -149,9 +153,13 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
+        dismissAndUpdatePreviousViewData()
     }
     
+    func dismissAndUpdatePreviousViewData() {
+        presentationController?.delegate?.presentationControllerDidDismiss?(presentationController!)
+        dismiss(animated: true, completion: nil)
+    }
     
     // MARK: UITextFieldDelegate implementation
     func textFieldDidBeginEditing(_ textField: UITextField) {
