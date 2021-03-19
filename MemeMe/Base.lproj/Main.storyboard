@@ -80,7 +80,7 @@
                     <navigationItem key="navigationItem" title="Sent Memes" id="M6g-5d-b7i">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BX5-HD-77C">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" id="YnG-Af-xyV"/>
+                                <action selector="add:" destination="cFZ-9Y-YnY" id="be2-cm-VeV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -169,7 +169,7 @@
                     <navigationItem key="navigationItem" title="Sent Memes" id="Uve-sX-ioV">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="K6s-wk-cft">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" id="dUv-A0-4Ub"/>
+                                <action selector="add:" destination="bcE-Jz-cMb" id="HN1-h0-jEW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -213,13 +213,13 @@
         <!--Meme Editor View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MemeEditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeEditorViewController" id="BYZ-38-t0r" customClass="MemeEditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iuF-6d-Gho" userLabel="Top Toolbar">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="j8R-6c-AcQ"/>
                                 </constraints>
@@ -238,7 +238,7 @@
                                 </items>
                             </toolbar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="406" translatesAutoresizingMaskIntoConstraints="NO" id="Jbf-xp-gNy">
-                                <rect key="frame" x="0.0" y="48" width="414" height="712"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="722"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="TOP" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="jXF-Bx-KTM">
                                 <rect key="frame" x="140" y="44" width="135" height="49.5"/>
@@ -247,13 +247,13 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="BOTTOM" textAlignment="center" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="R6J-pF-zaM">
-                                <rect key="frame" x="8" y="702.5" width="398" height="49.5"/>
+                                <rect key="frame" x="8" y="756.5" width="398" height="49.5"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nK-JH-38c" userLabel="Bottom Toolbar">
-                                <rect key="frame" x="0.0" y="760" width="414" height="48"/>
+                                <rect key="frame" x="0.0" y="814" width="414" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="WcZ-8N-Csr"/>
                                 </constraints>
@@ -313,9 +313,6 @@
             <point key="canvasLocation" x="1174" y="-90"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="dUv-A0-4Ub"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="circle.grid.3x3.fill" catalog="system" width="128" height="112"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>

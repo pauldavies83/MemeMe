@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class SentMemesCollectionViewController : UICollectionViewController {
+class SentMemesCollectionViewController : UICollectionViewController, UIAdaptivePresentationControllerDelegate {
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
         
@@ -32,6 +32,10 @@ class SentMemesCollectionViewController : UICollectionViewController {
         collectionView.reloadData()
     }
     
+    func presentationControllerDidDismiss(_ _: UIPresentationController) {
+        collectionView.reloadData()
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let meme = memes[(indexPath as NSIndexPath).row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "memeCollectionViewCell", for: indexPath) as! MemeCollectionViewCell
@@ -47,5 +51,11 @@ class SentMemesCollectionViewController : UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         memes.count
+    }
+    
+    @IBAction func add(_ sender: Any) {
+        let viewController = storyboard?.instantiateViewController(identifier: "MemeEditorViewController") as! MemeEditorViewController
+        viewController.presentationController?.delegate = self
+        present(viewController, animated: true, completion: nil)
     }
 }

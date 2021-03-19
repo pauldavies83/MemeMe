@@ -111,7 +111,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
                 self.save(meme)
             }
             sharer.dismiss(animated: true, completion: nil)
-            self.dismiss(animated: true, completion: nil)
+            self.dismissAndUpdatePreviousViewData()
         }
         
         present(sharer, animated: true, completion: nil)
@@ -153,9 +153,13 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
+        dismissAndUpdatePreviousViewData()
     }
     
+    func dismissAndUpdatePreviousViewData() {
+        presentationController?.delegate?.presentationControllerDidDismiss?(presentationController!)
+        dismiss(animated: true, completion: nil)
+    }
     
     // MARK: UITextFieldDelegate implementation
     func textFieldDidBeginEditing(_ textField: UITextField) {

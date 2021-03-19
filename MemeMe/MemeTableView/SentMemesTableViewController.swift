@@ -13,9 +13,13 @@ class SentMemesTableViewController : UITableViewController, UIAdaptivePresentati
     var memes: [Meme] {
         return (UIApplication.shared.delegate as! AppDelegate).memes
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
+    func presentationControllerDidDismiss(_ _: UIPresentationController) {
         tableView.reloadData()
     }
     
@@ -37,4 +41,9 @@ class SentMemesTableViewController : UITableViewController, UIAdaptivePresentati
         memes.count
     }
     
+    @IBAction func add(_ sender: Any) {
+        let viewController = storyboard?.instantiateViewController(identifier: "MemeEditorViewController") as! MemeEditorViewController
+        viewController.presentationController?.delegate = self
+        present(viewController, animated: true, completion: nil)
+    }
 }
