@@ -26,7 +26,8 @@ class SentMemesTableViewController : UITableViewController, UIAdaptivePresentati
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let meme = memes[(indexPath as NSIndexPath).row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "memeTableViewCell") as! MemeTableViewCell
-        cell.memeText?.text = "\(meme.topText) \(meme.bottomText)"
+        cell.topText?.text = meme.topText
+        cell.bottomText?.text = meme.bottomText
         cell.memeImage?.image = meme.memedImage
         return cell
     }

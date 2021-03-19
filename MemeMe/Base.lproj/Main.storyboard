@@ -43,32 +43,44 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDS-pQ-UEX">
-                                            <rect key="frame" x="156" y="39" width="238" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LvX-PJ-w04">
                                             <rect key="frame" x="8" y="0.0" width="140" height="100"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="140" id="ojM-2p-Y3h"/>
                                             </constraints>
                                         </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="nZo-XI-y0o">
+                                            <rect key="frame" x="156" y="26" width="238" height="48"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDS-pQ-UEX">
+                                                    <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HV-s4-afQ">
+                                                    <rect key="frame" x="0.0" y="27.5" width="41.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="nZo-XI-y0o" firstAttribute="leading" secondItem="LvX-PJ-w04" secondAttribute="trailing" constant="8" symbolic="YES" id="3QQ-4H-0RK"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="nZo-XI-y0o" secondAttribute="trailing" id="4e9-qn-ZNP"/>
+                                        <constraint firstItem="nZo-XI-y0o" firstAttribute="leading" secondItem="LvX-PJ-w04" secondAttribute="trailing" constant="8" id="FIh-mu-gu3"/>
                                         <constraint firstItem="LvX-PJ-w04" firstAttribute="centerY" secondItem="JyC-lf-RI1" secondAttribute="centerY" id="LzU-bg-hsW"/>
-                                        <constraint firstItem="KDS-pQ-UEX" firstAttribute="top" secondItem="JyC-lf-RI1" secondAttribute="topMargin" constant="29" id="gIA-Di-ZSh"/>
-                                        <constraint firstItem="KDS-pQ-UEX" firstAttribute="leading" secondItem="LvX-PJ-w04" secondAttribute="trailing" constant="8" id="hEb-iV-HUf"/>
                                         <constraint firstItem="LvX-PJ-w04" firstAttribute="leading" secondItem="JyC-lf-RI1" secondAttribute="leadingMargin" constant="-12" id="jas-NA-qED"/>
-                                        <constraint firstItem="LvX-PJ-w04" firstAttribute="centerY" secondItem="KDS-pQ-UEX" secondAttribute="centerY" id="oTt-LX-hMp"/>
                                         <constraint firstItem="LvX-PJ-w04" firstAttribute="top" secondItem="JyC-lf-RI1" secondAttribute="topMargin" constant="-11" id="r8I-V5-XhI"/>
-                                        <constraint firstItem="KDS-pQ-UEX" firstAttribute="trailing" secondItem="JyC-lf-RI1" secondAttribute="trailingMargin" id="uwj-cT-Wc3"/>
+                                        <constraint firstItem="nZo-XI-y0o" firstAttribute="centerY" secondItem="LvX-PJ-w04" secondAttribute="centerY" id="rDE-EV-PWg"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="bottomText" destination="5HV-s4-afQ" id="SfE-YA-hdk"/>
                                     <outlet property="memeImage" destination="LvX-PJ-w04" id="JKp-4H-I7v"/>
-                                    <outlet property="memeText" destination="KDS-pQ-UEX" id="EnP-Yf-wPC"/>
+                                    <outlet property="topText" destination="KDS-pQ-UEX" id="OJw-tk-YTn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
